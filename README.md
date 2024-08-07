@@ -14,15 +14,25 @@ The site was developed using MongoDB, Express, React, and Node.js. The product d
    DATABASE_URI=YOUR_MONGODB_DATABASE_URI
    STRIPE_SECRET=YOUR_STRIPE_SECRET
    ```
-3. Run the following commands in the *server* directory to get the server running:
+### For local installations:
+1. Run the following commands in the *server* directory to get the server running:
    ``` bash
    npm i
    npm run dev
    ```
-4. Navigate to the *client* directory and run the following commands:
+2. Navigate to the *client* directory and run the following commands:
    ``` bash
    npm i
    npm run start
    ```
-5. Visit your website on the browser using the link to your local/network server
+### Using Docker:
+1. Run the following commands in the root directory:
+   ``` bash
+   docker-compose up
+   ```
+
+## Notes:
+- Invalid ELF header error with bcrypt when constructing Docker container, uninstall and reinstall bcrypt using npm within the container/your local machine to fix the issue.
+
+
    
