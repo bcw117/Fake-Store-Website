@@ -19,7 +19,7 @@ export const Account = () => {
 
   const logout = async () => {
     try {
-      await axios.delete("/logout");
+      await axios.delete("http://localhost:4000/logout");
       navigate("/");
       window.location.reload();
     } catch (err) {

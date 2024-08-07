@@ -10,12 +10,12 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const stripe = require("stripe")(process.env.STRIPE_SECRET);
 
-const PORT = 4000;
+const PORT = process.env.PORT;
 
 connectDb();
 app.use(
   cors({
-    origin: ["http:localhost:4000"],
+    origin: [`http://localhost:3000`],
     credentials: true,
   })
 );

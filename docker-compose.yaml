@@ -1,0 +1,19 @@
+services:
+  server:
+    build: ./server
+    container_name: fake_server
+    ports:
+      - "4000:4000"
+    env_file:
+      - ./server/.env
+    volumes:
+      - ./server:/app
+      - /usr/src/app/node_modules
+  client:
+    build: ./client
+    container_name: fake_client
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./client:/app
+      - /usr/src/app/node_modules

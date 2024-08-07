@@ -11,7 +11,7 @@ export const ShopContextProvider = ({ children }) => {
   useEffect(() => {
     if (user) {
       axios
-        .get("/getUserCart", {
+        .get("http://localhost:4000/getUserCart", {
           params: {
             email: user.email,
           },
@@ -30,7 +30,7 @@ export const ShopContextProvider = ({ children }) => {
 
   const queryCartItem = async (product) => {
     if (user) {
-      const res = await axios.post("/addToUserCart", {
+      const res = await axios.post("http://localhost:4000/addToUserCart", {
         email: user.email,
         productID: product.id,
       });
@@ -43,7 +43,7 @@ export const ShopContextProvider = ({ children }) => {
 
   const queryRemoveCartItem = async (product) => {
     if (user) {
-      await axios.delete("/removeFromUserCart", {
+      await axios.delete("http://localhost:4000/removeFromUserCart", {
         data: {
           email: user.email,
           productID: product.id,

@@ -13,9 +13,12 @@ export const Cart = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await axios.post("/create-checkout-session", {
-      cartItems,
-    });
+    const res = await axios.post(
+      "http://localhost:4000/create-checkout-session",
+      {
+        cartItems,
+      }
+    );
 
     const { url } = res.data;
     window.location.href = url;

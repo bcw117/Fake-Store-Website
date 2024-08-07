@@ -13,7 +13,7 @@ export const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("/login", { email, password });
+      await axios.post("http://localhost:4000/login", { email, password });
       navigate("/");
       window.location.reload();
     } catch (err) {

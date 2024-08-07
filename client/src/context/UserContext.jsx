@@ -12,7 +12,7 @@ export function UserContextProvider({ children }) {
   useEffect(() => {
     if (token) {
       axios
-        .get("/profile", {
+        .get("http://localhost:4000/profile", {
           headers: {
             Authorization: "Bearer " + token,
           },
